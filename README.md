@@ -56,7 +56,7 @@ Download the dataset from https://github.com/JasonHoou/USPTO-2M
 
 ## Following work:
 
-1. Use the entire patent dataset (6M+ patents from 1976 to 2019), descriptions of patent documents as texts, and different classification systems (e.g., Cooperative patent classification, WIPO technology fields).
+1. Use the entire patent dataset (6M+ patents from 1976 to 2019, supported by [PatentsView](http://www.patentsview.org/download/)), descriptions of patent documents as texts, and different classification systems (e.g., Cooperative patent classification, WIPO technology fields).
 
 2. Test different variations, e.g., seqCNN, seq2seq with attention, bidirectional RCNN.
 
