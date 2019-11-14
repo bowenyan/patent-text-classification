@@ -47,7 +47,7 @@ Download the dataset from https://github.com/JasonHoou/USPTO-2M
 
 3. Simple multi-layer perceptron model takes n-grams as input perform good even with smaller samples, compared to SVM, Naive Bayes.
 
-## Future work:
+## Following work:
 
 1. Use the entire patent dataset (6M+ patents from 1976 to 2019), descriptions of patent documents as texts, and different classification systems (e.g., Cooperative patent classification, WIPO technology fields).
 
