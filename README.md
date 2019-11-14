@@ -11,6 +11,7 @@ Download the dataset from https://github.com/JasonHoou/USPTO-2M
 ## Data preprocessing: 
 
 1. Remove invalid class information from the original dataset. Most of those invalid classes have only one patent.
+
 2. Create balanced dataset for each class. 
 
 
@@ -41,11 +42,17 @@ Download the dataset from https://github.com/JasonHoou/USPTO-2M
 
 ## Some findings:
 
-1. Since we only used patent abstracts for testing, the results of using “bag of words” and “word embedding“ seem not very different. It may also because the technical words used in patent documents are more important for choosing patent classes. Sequence representation of words in patent documents might not affect the classification very much.
+1. Since we only used patent abstracts for testing, the results of using “bag of words” and “word embedding“ seem not very different. It may also because the technical words used in patent documents are more important for choosing patent classes. Sequence representation of words in patent documents might not affect the classification very much, especially the classes represent technology domains that might be more related to technical keywords.
 
 2. In the experiments of using neural networks, 1 hidden layer performs well, compared to 2 or 3 hidden layers.
 
-3. Simple multi-layer perceptron model takes n-grams as input perform good even with smaller samples, compared to SVM, Naive Bayes.
+3. Simple multi-layer perceptron model takes n-grams as input perform good even with smaller samples/features, compared to SVM, Naive Bayes, or other neural networks. Varying unit or learning rate do not affect the performance. Only the change of batch size affected the accuracy a lot. 
+
+4. In feature selection, 15k features seem more effective, varying 5k to 20k.
+
+5. Using pre-trained word embeddings do not perform better than using tfidf matrix or allowing the algorithm to learning its own embedding layer. It may because 1) we only choose 100 dimension, which is very small; 2) the technical words actually play an important role in patent classification, and which might be enough for patent text classification; 3) use an average of token vectors to represent a document.
+
+*Note that, in the tfidf vectorization experiments, we use 630k~ samples and 180m~ features (number of words) for training Naive Bayes, SVM, etc., traditional classifiers, but only 315k~ samples and 15k~ features for training neural networks, in terms of limitations of computing power.
 
 ## Following work:
 
