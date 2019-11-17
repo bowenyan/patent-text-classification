@@ -66,3 +66,6 @@ Download the dataset from https://github.com/JasonHoou/USPTO-2M
 
 5. Use grid search, k-fold cross-validation to optimize hyperparameters.
 
+## Updates:
+
+1. Use grid search to fine tuning the hyperparameters used in CNN, and larger set of samples to train the CNN model via GPU.
